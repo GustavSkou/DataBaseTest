@@ -51,6 +51,6 @@ public class Program
                 reader.GetInt32(4)      //salary INT
             );
         }
-        Console.WriteLine(teacher.ToString());
+        Console.WriteLine((object)teacher.ToString());
     }
 }
