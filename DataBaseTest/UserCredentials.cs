@@ -1,4 +1,3 @@
-
 class UserCredentials
 {
     private string name, password;
