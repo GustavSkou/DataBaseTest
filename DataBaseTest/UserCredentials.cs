@@ -2,7 +2,7 @@
 class UserCredentials
 {
     private string name, password;
-    static private UserCredentials user = new UserCredentials("postgres", "password");
+    static private UserCredentials user = new UserCredentials("username", "password");
 
     static public string Name
     {
