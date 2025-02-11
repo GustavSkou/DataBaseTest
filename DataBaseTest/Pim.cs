@@ -1,11 +1,13 @@
-using Npgsql;
 public class Pim
 {
-    async public Task fetch()
+    async public Task<object> fetch(int id)
     {
-        Database.Instance.Command.CommandText = "SELECT * FROM teachers";
+        Database.Instance.Command.CommandText = $"SELECT * FROM teachers WHERE ID = '{id}'";
+
         using var reader = await Database.Instance.Command.ExecuteReaderAsync();
-        Teacher teacher;
+
+        Teacher teacher = null;
+
         while (await reader.ReadAsync())
         {
             teacher = new Teacher
@@ -16,8 +18,7 @@ public class Pim
                 reader.GetString(3),    //subject VARCHAR
                 reader.GetInt32(4)      //salary INT
             );
-            Console.WriteLine((object)teacher.ToString());
         }
-
+        return teacher;
     }
 }

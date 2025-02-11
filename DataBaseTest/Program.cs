@@ -1,9 +1,8 @@
-﻿
-public class Program
+﻿public class Program
 {
     static async Task Main()
     {
         Pim pim = new Pim();
-        await pim.fetch();
+        Console.WriteLine(await pim.fetch(2));
     }
 }
