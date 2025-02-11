@@ -2,7 +2,7 @@
 {
     static async Task Main()
     {
-        Pim pim = new Pim();
-        Console.WriteLine(await pim.fetch(2));
+        IPim pim = new Pim();
+        Console.WriteLine(await pim.Fetch(2));
     }
 }

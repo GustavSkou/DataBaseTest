@@ -1,6 +1,6 @@
-public class Pim
+public class Pim : IPim
 {
-    async public Task<object> fetch(int id)
+    async public Task<object> Fetch(int id)
     {
         Database.Instance.Command.CommandText = $"SELECT * FROM teachers WHERE ID = '{id}'";
 
